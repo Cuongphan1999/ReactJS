@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Country Code USA</h1>
+    <input type="text" name="Code" placeholder="Enter Country Code" onkeyup="is_usZipCode(this)">
+    <script>
+        function is_usZipCode(obj) {
+            let code = obj.value;
+            regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
+            if(regexp.test(code)) {
+                console.log("corect code is " + code);
+            }else {
+                console.log("incorrect code is " + code);
+            }
+        }
+        // - `^` : Bắt đầu của chuỗi.
+        // - `[0-9]` : Bất kỳ số từ 0 đến 9.
+        // - `{5}` : Chính xác 5 lần xuất hiện của số từ 0 đến 9.
+        // - `(?:-[0-9]{4})?` : Nhóm không ghi nhớ (non-capturing group) để định nghĩa 
+        // ký tự "dash" (-) và 4 số từ 0 đến 9. Dấu "?" sau nhóm này cho phép nhóm 
+        // này có thể xuất hiện một hoặc không xuất hiện trong chuỗi.- `$` : Kết thúc của chuỗi.
+        // "12345", "12345-6789".
+    </script>
+</body>
+</html>
