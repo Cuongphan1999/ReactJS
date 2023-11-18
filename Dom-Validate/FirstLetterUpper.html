@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Name</h1>
+    <input type="text" name="name" placeholder="Please enter your name" onkeydown="isFirstLetterUpperCase(this)">
+    <script>
+        function isFirstLetterUpperCase(obj) {
+            let text = obj.value;
+            regexp = /^[A-Z]/;
+            if (regexp.test(text)) {
+                console.log("String's first character is uppercase");
+            }else {
+                console.log("String's first character is not uppercase");
+            }
+
+        }
+    </script>
+</body>
+</html>
