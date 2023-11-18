@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Validate Account</h1>
+    <input type="text" name="account" placeholder="Enter your number" onkeydown="Validate_Account(this)">
+    <script>
+        function Validate_Account(obj){
+            let account = obj.value;
+            RegExp = /^[_a-z0-9]{6,}$/;
+            if(RegExp.test(account)){
+                console.log("validate account true" + account);
+            }else{
+                console.log("validate account false" + account);
+            }
+        }
+    </script>
+</body>
+</html>
