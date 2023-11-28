@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const animals = [
+        {"ID": "DV8", "Name": "Eurasian Collared-Dove", "Type": "Dove" },
+        {"ID": "HK12", "Name": "Bald", "Type": "Hawk" },
+        {"ID": "HK6", "Name": "Cooper's Hawk", "Type": "Hawk" },
+        {"ID": "SP11", "Name": "Bell's Sparrow", "Type": "Sparrow" },
+        {"ID": "DV2", "Name": "Mourning Dove", "Type": "Dove" }
+        ]
+        let zoo = new Set(animals);
+        //khai bao doi tuong ve mot loai chim
+        let Bald = {
+            "ID": "HK12", "Name": "Bald Eagle", "Type": "Hawk" 
+        }
+        console.log(zoo);
+        //them mot loai chim
+        let zooAnimal = (animal) => {
+            zoo.add(animal);
+        }
+
+        //KT doi tuong co hay chua
+        let isExist = (animal) => {
+            let checkExist = false;
+            zoo.forEach(zo => {
+                if (zo.ID == animal.ID && zo.Name == animal.Name && zo.Type == animal.Type){
+                    checkExist = true
+                }
+            })
+            return true;
+        }
+        console.log(isExist(Bald));
+        //xoa 
+        let deleteAnimalByID = (animalID) => {
+            zoo.forEach(zo => {
+                if (zo.ID == animalID){
+                    zoo.delete(zo);
+                }
+            })
+        };
+        deleteAnimalByID("DV2");
+        //them
+        let addIfNotExist = (animal) => {
+            if (!isExist(animal)){
+                addAnimal(animal);
+            }
+        }
+        addIfNotExist(Bald);
+        console.log(zoo + "add");
+    </script>
+</body>
+</html>
