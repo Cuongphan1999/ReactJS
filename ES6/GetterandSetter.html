@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person</title>
+</head>
+
+<body>
+   <script>
+    const Person = {
+        Name: 'Mac',
+        Age: '22',
+        Hobby: 'game',
+        get hobby() {
+            return this.Hobby;
+        },
+        set hobby(hobby) {
+            this.Hobby = hobby;
+        }
+    }
+    console.log(Person);
+    console.log(Person.hobby);
+    Person.hobby = "soccer";
+    console.log(Person)
+   </script>
+</body>
+
+</html>
